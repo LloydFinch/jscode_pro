@@ -1,293 +1,309 @@
 <html>
 
 <head>
-	<title>Test!</title>
-	 <script src="build/react.js"></script>
-     <script src="build/react-dom.js"></script>
-     <script src="build/browser.min.js"></script>
+    <title>Test!</title>
+    <script src="build/react.js"></script>
+    <script src="build/react-dom.js"></script>
+    <script src="build/browser.min.js"></script>
 
 
-	<script type="text/babel">
-		
-		for (var i = 1; i <= 10; i++) {
-			document.write(i);
-			document.write("</br>");
-		}
+    <script type="text/babel">
 
-		function func0(){
-			let a = 1;
-		if(true){
-			let a  = 2;
-			a = 3;
-			console.log(a);
-		}
-		console.log(a);
+        for (var i = 1; i <= 10; i++) {
+            document.write(i);
+            document.write("</br>");
+        }
 
-	 //    let x = do {
-		// 	let a = 10;
-		// 	a = a + 10;
-		// };
-		// console.log(x);
+        function func0() {
+            let a = 1;
+            if (true) {
+                let a = 2;
+                a = 3;
+                console.log(a);
+            }
+            console.log(a);
 
-		let [a1,b1,c1] = [1,2,3];
-		console.log(a1,b1,c1);
+            //    let x = do {
+            // 	let a = 10;
+            // 	a = a + 10;
+            // };
+            // console.log(x);
 
-		let [a2,[b2,c2],d2] = [10,[,20],30];
-		console.log(a2,b2,c2,d2);
+            let [a1, b1, c1] = [1, 2, 3];
+            console.log(a1, b1, c1);
 
-		let [head,...trail] = [1,2,3,4,5];
-		console.log(head,trail);
+            let [a2, [b2, c2], d2] = [10, [, 20], 30];
+            console.log(a2, b2, c2, d2);
 
-		// leg [f1,t,...f2] = ['a'];
-		// console.log(f1,f2);
-		}
+            let [head, ...trail] = [1, 2, 3, 4, 5];
+            console.log(head, trail);
 
-		function func1(){
-			let [a=1,b=2] = [3];
-			console.log(a,b);
-		}
+            // leg [f1,t,...f2] = ['a'];
+            // console.log(f1,f2);
+        }
 
-		function func2(){
-			let [a = 'a',b='b'] = ['c',undefined];
-			console.log(a,b);
-		}
+        function func1() {
+            let [a = 1, b = 2] = [3];
+            console.log(a, b);
+        }
 
-		function func3(){
+        function func2() {
+            let [a = 'a', b = 'b'] = ['c', undefined];
+            console.log(a, b);
+        }
 
-			function f(){
-				console.log('android');
-				return 'android'
-			}
+        function func3() {
 
-			let [x = f()] = [undefined];
+            function f() {
+                console.log('android');
+                return 'android'
+            }
 
-			console.log(x);
-		}
+            let [x = f()] = [undefined];
 
-		function func4(){
-			// let [x=1,y=x] = [2,3];//2,3
-			// let [x=1,y=x] = [2,undefined];//2,2
-			let [x=1,y=x] = [undefined,2];
-			console.log(x,y);
-		}
+            console.log(x);
+        }
 
-		function func5(){
+        function func4() {
+            // let [x=1,y=x] = [2,3];//2,3
+            // let [x=1,y=x] = [2,undefined];//2,2
+            let [x = 1, y = x] = [undefined, 2];
+            console.log(x, y);
+        }
 
-			let {id,name} = {id:"10010",name:"finch"};
-			let {user:username} = {user:"lloyd"};
+        function func5() {
 
-			let obj = {cid:"10086",position:4};
-			let {cid,position}  = obj;
+            let {id, name} = {id: "10010", name: "finch"};
+            let {user: username} = {user: "lloyd"};
 
-			console.log(id,name);
-			console.log(username);
-			console.log(obj);
-			console.log(cid,position);
-		}
+            let obj = {cid: "10086", position: 4};
+            let {cid, position} = obj;
 
-		function func6(){
-			let {id=10010,name="lloyd"} = {id:undefined,name:"finch"};
-			console.log(id,name);
+            console.log(id, name);
+            console.log(username);
+            console.log(obj);
+            console.log(cid, position);
+        }
 
-			let {user,user:{uid,uname},position} = {user:{uid:741741,uname:'jerry'},position:12};
-			console.log(user);
-			console.log(uid,uname,position);
-		}
+        function func6() {
+            let {id = 10010, name = "lloyd"} = {id: undefined, name: "finch"};
+            console.log(id, name);
 
-		function func7(){
-			let {log,sin,cos} = Math;
-			console.log(sin(60));
-			console.log(cos(60));
-			console.log(log(1000));
+            let {user, user: {uid, uname}, position} = {user: {uid: 741741, uname: 'jerry'}, position: 12};
+            console.log(user);
+            console.log(uid, uname, position);
+        }
 
-			let arr=[1,2,3,4,5,6,7];
-			let {0:first,[arr.length-1]:last} = arr;
-			console.log(first,last);
+        function func7() {
+            let {log, sin, cos} = Math;
+            console.log(sin(60));
+            console.log(cos(60));
+            console.log(log(1000));
 
-			let hello = 'hello';
-			let {0:firsts,1:seconds,[hello.length-1]:lasts,length:lengths} = hello;
-			console.log(firsts,seconds,lasts,lengths);
-		}
+            let arr = [1, 2, 3, 4, 5, 6, 7];
+            let {0: first, [arr.length - 1]: last} = arr;
+            console.log(first, last);
 
-		function func8(){
-			let {toString:s} = "123";
-			console.log(s);
+            let hello = 'hello';
+            let {0: firsts, 1: seconds, [hello.length - 1]: lasts, length: lengths} = hello;
+            console.log(firsts, seconds, lasts, lengths);
+        }
 
-			let {toString:s1} = true;
-			let {toString:s2} = 123456;
-			console.log(s1);
-			console.log(s2);
-		}
+        function func8() {
+            let {toString: s} = "123";
+            console.log(s);
 
-		function func9(){
-			let [e1,e2] = [[1,2],[3,4]].map(([a,b])=> a + b);
-			console.log(e1,e2);
-		}
+            let {toString: s1} = true;
+            let {toString: s2} = 123456;
+            console.log(s1);
+            console.log(s2);
+        }
 
-		function func10(){
-			function f([x=10,y=9]){
-				return x+y;
-			}
-			console.log(f([1,2]));
+        function func9() {
+            let [e1, e2] = [[1, 2], [3, 4]].map(([a, b]) => a + b);
+            console.log(e1, e2);
+        }
 
+        function func10() {
+            function f([x = 10, y = 9]) {
+                return x + y;
+            }
 
-			function f2({x=1,y=2} = {x:3,y:4}){
-				return x+y;
-			}
-			console.log(f2());
-		}
-
-		function func11(){
-			let x = 10;
-			let y = 11;
-			console.log('x: '+x+ ', y: '+y);
-
-			[x,y] = [y,x];
-			console.log('x: '+x+ ', y: '+y);
+            console.log(f([1, 2]));
 
 
-			function f(){
-				return [1,2,3];
-			}
+            function f2({x = 1, y = 2} = {x: 3, y: 4}) {
+                return x + y;
+            }
 
-			let [a,b,c] = f();
-			console.log(a,b,c);
+            console.log(f2());
+        }
 
-			function f2(){
-				return {id:10086,name:'tom'};
-			}
+        function func11() {
+            let x = 10;
+            let y = 11;
+            console.log('x: ' + x + ', y: ' + y);
 
-			let {id,name} = f2();
-			let user = f2();
-			console.log(id,name);
-			console.log(user.id,user.name);
-		}
-
-		function func12(){
-			let json = {status:true,user:{id:10086,name:'lloyd'}};
-
-			let {status,user:{id,name}} = json;
-			console.log(status,id,name);
-		}
-
-		function func13(){
-			let map = new Map();
-			map.set('first','android');
-			map.set('second','java');
-			map.set('third','js');
-
-			for(let [key,value] of map){
-				console.log(key,value);
-			}
-
-			for(let [key] of map){
-				console.log(key);
-			}
-
-			for(let [,value] of map){
-				console.log(value);
-			}
-		}
-
-		let func14 = ()=>{
-			
-			const hello = 'hello';
-
-			let s = `this is a <b>${hello.length}</b>`;
-
-			document.write(s);
-
-			console.log(s);
+            [x, y] = [y, x];
+            console.log('x: ' + x + ', y: ' + y);
 
 
-			let s2 = `<ul>
+            function f() {
+                return [1, 2, 3];
+            }
+
+            let [a, b, c] = f();
+            console.log(a, b, c);
+
+            function f2() {
+                return {id: 10086, name: 'tom'};
+            }
+
+            let {id, name} = f2();
+            let user = f2();
+            console.log(id, name);
+            console.log(user.id, user.name);
+        }
+
+        function func12() {
+            let json = {status: true, user: {id: 10086, name: 'lloyd'}};
+
+            let {status, user: {id, name}} = json;
+            console.log(status, id, name);
+        }
+
+        function func13() {
+            let map = new Map();
+            map.set('first', 'android');
+            map.set('second', 'java');
+            map.set('third', 'js');
+
+            for (let [key, value] of map) {
+                console.log(key, value);
+            }
+
+            for (let [key] of map) {
+                console.log(key);
+            }
+
+            for (let [, value] of map) {
+                console.log(value);
+            }
+        }
+
+        let func14 = () => {
+
+            const hello = 'hello';
+
+            let s = `this is a <b>${hello.length}</b>`;
+
+            document.write(s);
+
+            console.log(s);
+
+
+            let s2 = `<ul>
 			<li>${hello.charAt(0)}</li>
 			<li>${hello.repeat(2)}</li>
 			<li>${hello.padStart('xx')}</li>
 			</ul>`;
 
-			document.write(s2);
-		}
+            document.write(s2);
+        }
 
-		function func15(){
-			let regex = new RegExp(/^.*$/);
-			let result = regex.test('addd');
-			console.log(result);
+        function func15() {
+            let regex = new RegExp(/^.*$/);
+            let result = regex.test('addd');
+            console.log(result);
 
-			regex = new RegExp(/^\d{5,11}$/);
-			console.log(regex.test(187876));
+            regex = new RegExp(/^\d{5,11}$/);
+            console.log(regex.test(187876));
 
-			console.log(/^\d{5,9}@qq.com$/.test('198444@qq.com'));
-			console.log(/^[a-f]{3,8}\d{3,11}\.?\w+$/.test('bbbb1234.s654'));
-		}
+            console.log(/^\d{5,9}@qq.com$/.test('198444@qq.com'));
+            console.log(/^[a-f]{3,8}\d{3,11}\.?\w+$/.test('bbbb1234.s654'));
+        }
 
-		function func16(){
-			console.log(Math.trunc(2.45677));//取整数部分
-			console.log(Math.sign(10));//判断是正数,负数,还是0
-			console.log(Math.cbrt(-27));//求立方根
-			console.log(Math.clz32(128));//求32位无符号整型数前面有多少个0
-			console.log(Math.imul(-10,7));//做乘法
-			console.log(Math.hypot(3,4));//求直角三角形斜边
-		}
+        function func16() {
+            console.log(Math.trunc(2.45677));//取整数部分
+            console.log(Math.sign(10));//判断是正数,负数,还是0
+            console.log(Math.cbrt(-27));//求立方根
+            console.log(Math.clz32(128));//求32位无符号整型数前面有多少个0
+            console.log(Math.imul(-10, 7));//做乘法
+            console.log(Math.hypot(3, 4));//求直角三角形斜边
+        }
 
-		function func17(){
-			function func({x = 10, y}){
-				return Math.imul(x,y);
-			}
+        function func17() {
+            function func({x = 10, y}) {
+                return Math.imul(x, y);
+            }
 
-			function func2({x = 1,y = 2} = {}){
-				return Math.imul(x,y);
-			}
+            function func2({x = 1, y = 2} = {}) {
+                return Math.imul(x, y);
+            }
 
-			function func3({x,y} = {x: 1,y: 2}){
-				return Math.imul(x,y);
-			}
+            function func3({x, y} = {x: 1, y: 2}) {
+                return Math.imul(x, y);
+            }
 
-			console.log(func3({x:1}));
+            console.log(func3({x: 1}));
 
-			function func4(x=1,y){
-				return [x,y];
-			}
+            function func4(x = 1, y) {
+                return [x, y];
+            }
 
-			console.log(func4(undefined,4));
-		}
+            console.log(func4(undefined, 4));
+        }
 
-		function func18(){
-			let x = 10;
-			function func(y = x){
-				let x = 20;
-				console.log(x,y);
-			}
-			func(21);
-		}
+        function func18() {
+            let x = 10;
 
-		function func19(){
-			function func(...values){
-				values.forEach((item)=>{
-					console.log(item);
-				})
-			}
+            function func(y = x) {
+                let x = 20;
+                console.log(x, y);
+            }
 
-			func(1,2,3,4,5,6,7,8,9);
-			console.log(func.name);
-		}
+            func(21);
+        }
 
-		function func20(){
-			let func = (num1 = 10,num2 = 11)=> Math.imul(num1,num2);
-			console.log(func(9));
+        function func19() {
+            function func(...values) {
+                values.forEach((item) => {
+                    console.log(item);
+                })
+            }
 
-			[1,2,3,4,5].map(num => console.log(num+1));
+            func(1, 2, 3, 4, 5, 6, 7, 8, 9);
+            console.log(func.name);
+        }
 
-			const num = n => n*n;
-			console.log(num(12));
-		}
+        function func20() {
+            let func = (num1 = 10, num2 = 11) => Math.imul(num1, num2);
+            console.log(func(9));
 
-		func1()
-	</script>
+            [1, 2, 3, 4, 5].map(num => console.log(num + 1));
+
+            const num = n => n * n;
+            console.log(num(12));
+        }
+
+        function testPromise() {
+            function success() {
+                console.log('success')
+            }
+
+            function failure() {
+                console.log('failure');
+            }
+
+            new Promise(success(), failure())
+        }
+
+        testPromise()
+    </script>
 </head>
 
 <body>
-	Test</br>
+Test</br>
 </body>
 
 </html>
